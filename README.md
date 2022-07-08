@@ -39,47 +39,7 @@ That looks like a flag to me.
 
 > For more information on the encoding used in these challenges try looking into Caesar Cipher, ROT, Base64 and Vigenere Cipher. These are just some basic methods of encoding used to help introduce users to some of the forms of encoding and tools that can be used to crack them.
 
-# Task 3 - Steganography - Mapping it all out
-
-The next few tasks (3-5) were all Steganography challenges. Again, these few tasks were designed to introduce some of the tools and techniques that can be used to solve Steganography challenges. 
-
-As the challenge states:
-
-"***Steganography is the practice of hiding a secret message in something that is not secret.***"
-
-For this particular task I started with the basics and checked the file with tools like `Steghide` but was unable to find anything. At this point I started looking at some of the online tools available to hide images inside other images. It is likely that there are a number of online tools that will produce the same result however, I used the following:
-
-https://incoherency.co.uk/image-steganography/#unhide
-
-When I uploaded the image I saw instant results.
-
-![88e916b9ed6e4bc4994be4ad2a72a7d0](https://user-images.githubusercontent.com/104072961/164222475-5b18bce1-22b1-4653-b4ee-842783e727a2.png)
-
-It appears the flag was hidden or overlayed inside the lower "bits" of the map image. [Wikipedia](https://en.wikipedia.org/wiki/Steganography) actually has some good information on Steganography for additional research.
-
-# Task 4 - Steganography - Looking Good
-
-This flag took no time at all. I simply used the tool `Steghide` to extract any files from the .jpeg. The file `flag.txt` had been hidden within the image. Using the command:
-
-```steghide extract -sf aqua.jpeg```
-
-> In this case there was no passphrase
-
-![4bcecadc3d0b4035a5dd6d498a82be9b](https://user-images.githubusercontent.com/104072961/164222528-e72f666b-77e1-40d4-bce7-0e5ddd591fd0.png)
-
-Simple!!!
-
-# Task 5 - Steganography - Cam's Super Security
-
-Ok, so this flag took people a bit longer than it should have...
-
-After trying a number of tools, both online and on my kali machine eventually I found this one. The tool I used in the end was my "Mark 1 Eyeball"
-
-![dc306b14fb534c1089ee9afe740a82f9](https://user-images.githubusercontent.com/104072961/164222597-5f81fb8e-f91f-4884-b963-f0180b51601b.png)
-
-Excellent, hidden in plan sight...Just zoom in.
-
-# Task 6 - Lock it down
+# Task 3 - Lock it down
 
 In this task, we are provided with a file called **secret-data.xls** which is encrypted. Again noting that this room is designed to introduce users to CTF challenges and some simple techniques we can start of simple. Using tools native to Kali Linux we will attempt to crack the password on this file.
 
@@ -100,7 +60,7 @@ Now, if `openoffice` or some equivalent is installed on your kali machine you sh
 
 ![0eab92de72f14c389ddc0e94b86ac1dd](https://user-images.githubusercontent.com/104072961/164222878-647c22d4-e2e6-45b4-9de8-ab5cd1bf1408.png)
 
-# Task 7 - Crossing Wires
+# Task 4 - Crossing Wires
 
 This challenge was a logic circuit created in a way that there was only one solution. Before solving the circuit, its important to know how each of the logic gates (the symbols) work.
 
@@ -167,7 +127,7 @@ When your configuration results in a signal being provided to the final output, 
 
 Because this is a base 2 solution with 10 input gates, this means there are 2^10 or 1024 possible answers to this solution. While not ideal, it is possible to bruteforce the answer using burp repater versus tryhackme.
 
-# Task 8 - Brick-one
+# Task 5 - Brick-one
 
 This task is the first machine of the CTF, and it starts a little bit differently. The first set of credentials have been provided to us, telling me this is going to be more about Priv Esc/lateral movement within the target.
 
@@ -229,7 +189,7 @@ A nice quick win there. Now to find the flag it self.
 
 ![image](https://user-images.githubusercontent.com/104072961/164224094-bde40510-0197-49ef-b457-6bc9f90c138b.png)
 
-# Task 9 - WYWM-Bricknation
+# Task 6 - WYWM-Bricknation
 
 This machine is an easy, entry level machine that demonstrates a number of different beginner level techniques.
 
@@ -457,7 +417,7 @@ There we have a nice shell as Root.
 
 The final flag is located in `/root` and is accessible as the user Root.
 
-# Task 10 - ThousandHashes
+# Task 7 - ThousandHashes
 
 So this task is a bit of a simple programming challenge. Essentially, users are provided with the string `61v3_m3_k3y_pl3453` and they need to use a sequence of 5 hashing algorithms to hash the string 1000x total, resulting in a final hash which is the flag.
 
